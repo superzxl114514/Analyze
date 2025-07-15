@@ -1,10 +1,14 @@
 import json
 import asyncio
+import logging
 from typing import Any, Dict, List, Optional
-from loguru import logger
 
 from agent.tool_registry import TOOLS
 from agent.agent_core import route_and_run
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 try:
     import openai
